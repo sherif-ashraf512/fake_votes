@@ -3,555 +3,473 @@ $configData = Helper::appClasses();
 use Illuminate\Support\Str;
 @endphp
 
-<style>
-    #heroAnimationImg img{
-      height: 400px;
-    }
-  @media (max-width:1199.9px){
-    #heroAnimationImg img{
-      display: none;
-    }
-  }
-</style>
-
-@extends('layouts/layoutFront')
-
-@section('title', 'Home')
-
-<!-- Vendor Styles -->
-@section('vendor-style')
-@vite([
-  'resources/assets/vendor/libs/nouislider/nouislider.scss',
-  'resources/assets/vendor/libs/swiper/swiper.scss'
-])
-@endsection
-
-<!-- Page Styles -->
-@section('page-style')
-@vite(['resources/assets/vendor/scss/pages/front-page-landing.scss'])
-@endsection
-
-<!-- Vendor Scripts -->
-@section('vendor-script')
-@vite([
-  'resources/assets/vendor/libs/nouislider/nouislider.js',
-  'resources/assets/vendor/libs/swiper/swiper.js'
-])
-@endsection
-
-<!-- Page Scripts -->
-@section('page-script')
-@vite(['resources/assets/js/front-page-landing.js'])
-@endsection
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BU-VO A Dynamic Online Platform That Combines Smart Voting And Seamless Shopping..</title>
+    <link rel="icon" href="{{asset("assect/images/favicon.svg")}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{asset("assect/style/bootstrap.min.css")}}">
+    <link rel="stylesheet" href="{{asset("assect/style/style.css")}}">
+    <link rel="stylesheet" href="{{asset("assect/fontawesome-free-6.7.1-web/css/all.min.css")}}">
 
 
-@section('content')
-<div data-bs-spy="scroll" class="scrollspy-example">
-  <!-- Hero: Start -->
-  <section id="hero-animation">
-    <div id="landingHero" class="section-py landing-hero position-relative">
-      <img src="{{asset('assets/img/front-pages/backgrounds/hero-bg.png')}}" alt="hero background" class="position-absolute top-0 start-50 translate-middle-x object-fit-cover w-100 h-100" data-speed="1" />
-      <div class="container">
-        <div class="hero-text-box text-center position-relative">
-          <h1 class="text-primary hero-title display-6 fw-extrabold">Join the Buzz – Shop Smart, Share Your Voice!</h1>
-          <h2 class="hero-sub-title h6 mb-6">
-            Join a lively community to shop smart, read reviews, and share your take.<br class="d-none d-lg-block" />
-            Connect, post, and grab great deals today!
-          </h2>
-          <div class="landing-hero-btn d-inline-block position-relative">
-            <span class="hero-btn-item position-absolute d-none d-md-flex fw-medium">Join community
-              <img src="{{asset('assets/img/front-pages/icons/Join-community-arrow.png')}}" alt="Join community arrow" class="scaleX-n1-rtl" /></span>
-            <a href="#landingCTA" class="btn btn-primary btn-lg">Get early access</a>
-          </div>
-        </div>
-        <div id="heroDashboardAnimation" class="hero-animation-img">
-          <a href="javascript:" target="_blank">
-            <div id="heroAnimationImg" class="position-relative hero-dashboard-img">
-              <img src="{{asset('assets/img/front-pages/landing-page/landing-page.png')}}" alt="hero elements" class="position-absolute hero-elements-img animation-img top-0 start-0" data-app-light-img="front-pages/landing-page/landing-page.png" data-app-dark-img="front-pages/landing-page/landing-page.png" />
+
+
+
+</head>
+<body>
+           <!-- NavBar Start -->
+           <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+              <a class="navbar-brand fst-italic fs-3" href="#">
+                <i class="fa-1x fa-solid fa-crown px-3"></i>
+                BU-VO
+              </a>
+              <button class="navbar-toggler bs-info-border-subtle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0" id="navbarLinks">
+                  <li class="nav-item mx-2">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#About Us">About</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#Service">Service</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#Products">Products</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#Contact Us">Contact Us</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#Top-Reviews">Reviews</a>
+                  </li>
+                  <ul class="navbar-nav nav-btn">
+
+                  </ul>
+                </ul>
+                <ul class="navbar-nav nav-btn">
+                    <li class="nav-item">
+                        <button id="darkModeToggle" class="btn btn-link text-light mx-2">
+                          <i class="fas fa-moon"></i>
+                        </button>
+
+                  <li class="nav-item">
+                    <a class="btn btn-outline-light" href="{{route('login-page')}}">Login</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </a>
-        </div>
-      </div>
+          </nav>
+           <!-- NavBar End -->
 
+     <!-- Carousel Start -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{asset("assect/images/Img Carousel/4-1536x864.png")}}" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <!-- يمكنك إضافة تسميات هنا إذا أردت -->
+        <h5 class="text-dark">Welcome to BU-VO</h5>
+      </div>
     </div>
-    <div class="landing-hero-blank"></div>
-  </section>
-  <!-- Hero: End -->
+    <div class="carousel-item">
+      <img src="{{asset("assect/images/Img Carousel/7-1536x864.png")}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset("assect/images/Img Carousel/Untitled design (3).png")}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset("assect/images/Img Carousel/Untitled design (1).png")}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{{asset("assect/images/Img Carousel/Untitled design.png")}}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Carousel End -->
 
-  <!-- Useful features: Start -->
-  <section id="landingFeatures" class="section-py landing-features">
-    <div class="container">
-      <div class="text-center mb-4">
-        <span class="badge bg-label-primary">Latest Products</span>
-      </div>
-      <h4 class="text-center mb-1">
-        <span class="position-relative fw-extrabold z-1">Everything you need
-          <img src="{{asset('assets/img/front-pages/icons/section-title-icon.png')}}" alt="laptop charging" class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
-        </span>
-        is here
-      </h4>
-      <p class="text-center mb-12">More than just a collection of items, this package delivers ready-to-use conceptual products.</p>
-      <div class="features-icon-wrapper row gx-0 gy-6 g-sm-12">
-        @foreach($latestProducts as $product)
-        <div class="col-md-6 col-xl-4">
-          <div class="card">
-            <img class="card-img-top" src="{{asset("assets/$product->image")}}" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">{{$product->title}}</h5>
-              <p class="text-truncate">
-                {!! Str::limit(str_replace('"', '', $product->description), 300) !!}
-              </p>
-              <p class="badge fs-5 bg-warning">
-                {{$product->price}} EGP
-              </p>
-              <p class="card-text">
-                <small class="text-muted">{{$product->created_at->diffForHumans()}}</small>
-              </p>
-              <a href="{{route('make-order',$product->id)}}" class="btn fw-bold btn-success">BUY</a>
+            <!-- About Start -->
+           <div class="container-xxl py-5 my-5" id="About Us">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
+                        <div class="position-relative h-100">
+                            <img class="img-fluid position-absolute w-100 h-100" src="{{asset("assect/images/img/pexels-photo-4937448.jpeg")}}" alt="" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <h6 class="section-title bg-white text-start text-secondary pe-3">About Us</h6>
+                        <h1 class="mb-4">Welcome to <span class="text-success">BU-VO</span></h1>
+                        <p class="mb-4 fw-normal" style="font-size: 16px; line-height: 1.8; color: #333;">
+                            👋 Welcome to Bu-Vo, Where Fashion Meets Your Voice!<br>
+                            ✨ Discover the latest trends, shop your favorite styles, and be part of the fashion conversation!<br><br>
+                            🛍️ Buy Clothes You Love – Explore a wide range of trendy outfits handpicked just for you.<br><br>
+                            🗳️ Vote for the Best Looks – Your opinion matters! Rate and vote on your favorite items and help us decide what's hot and what's not.<br><br>
+                            🎯 Whether you're here to refresh your wardrobe or shape tomorrow's trends, you're in the right place.<br><br>
+                            🖤 Join the community, express your style, and let your voice be heard – one outfit at a time.
+                            </p>
+                        <div class="row gy-2 gx-4 mb-4">
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>New Collection</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Women</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Men</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Custom Services</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Best Seller</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                            </div>
+                        </div >
+                        <a class="btn btn-outline-secondary py-3 px-5 mt-2" href="">Read More</a>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
+        <!-- About End -->
+
+
+            <!-- Service Start -->
+    <div class="container-xxl py-5" id="Service">
+      <div class="container">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+              <h1 class="mb-5">Our Services</h1>
+          </div>
+          <div class="row g-4">
+              <div class="col-lg-3 col-sm-6" data-wow-delay="0.1s">
+                  <div class="service-item rounded pt-3">
+                      <div class="p-4">
+                        <i class=" fa fa-3x fa-solid fa-bag-shopping text-darkblue mb-4 "></i>
+                          <h5>Bag-Shopping</h5>
+                          <p>"Shop Stylish Bags – Your Perfect Carry Companion Awaits!"</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6" data-wow-delay="0.3s">
+                  <div class="service-item rounded pt-3">
+                      <div class="p-4">
+                          <i class="fa fa-3x fa-square-poll-horizontal text-darkblue mb-4"></i>
+                          <h5>Square-Poll-Horizontal</h5>
+                          <p>"Track Insights with Our Poll & Analytics Icon "Lorem ipsum dolor sit amet </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 " data-wow-delay="0.5s">
+                  <div class="service-item rounded pt-3">
+                      <div class="p-4">
+                          <i class="fa fa-3x fa-solid fa-credit-card text-darkblue mb-4"></i>
+                          <h5>Credit-Card</h5>
+                          <p>"Secure Payments & Card Management at Your Fingertips"</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                  <div class="service-item rounded pt-3">
+                      <div class="p-4">
+                          <i class="fa fa-3x fa-globe text-darkblue mb-4"></i>
+                          <h5>Globe</h5>
+                          <p>"Explore the World with Our Global Connectivity Icon " Lorem ipsum dolor sit amet </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="service-item rounded pt-3">
+                      <div class="p-4">
+                          <i class="fa fa-3x fa-solid fa-comments text-darkblue mb-4"></i>
+                          <h5>Comments</h5>
+                          <p>Share Your Thoughts – Leave a Comment! Thanks for your comment!</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="service-item rounded pt-3">
+                      <div class="p-4">
+                          <i class="fa fa-3x fa-solid fa-certificate text-darkblue mb-4"></i>
+                          <h5>Certificate</h5>
+                          <p>"Verify Your Achievements with Our Certificate Badge " Lorem ipsum dolor, sit amet </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                  <div class="service-item rounded pt-3">
+                      <div class="p-4">
+                          <i class="fa fa-3x fa-solid fa-screwdriver-wrench text-darkblue mb-4"></i>
+                          <h5>Screwdriver-Wrench</h5>
+                          <p>"Customize & Repair – Tools for Precision Adjustments" Lorem ipsum dolor, sit amet</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                  <div class="service-item rounded pt-3">
+                      <div class="p-4">
+                          <i class="fa fa-3x fa-cog text-darkblue mb-4"></i>
+                          <h5>Event Management</h5>
+                          <p>"Plan & Manage Events Seamlessly" ipsum justo dolor sed clita amet diam</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Service End -->
+   <!-- VOTE START -->
+    <div class="container-fluid bg-light py-2 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="text-center mb-5 ">
+                <h1 class="mb-5 text-info bg-black py-3 spinner-border-sm text-vote">Vote For Your Favorite Product</h1>
+                <a href="./vote.html" class="btn  btn-outline-dark btn-vote">Voting Launch<i class="fa-regular fa-circle-right"></i></a>
+
+            </div>
+        </div>
+    </div>
+
+   <!-- VOTE END -->
+<!-- Products Section - Responsive Version -->
+<div id="Products" class="container-xxl py-5">
+  <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">Our Collection</h6>
+          <h1 class="mb-5">Featured Products</h1>
+      </div>
+      <div class="row g-4 justify-content-center">
+          <!-- Product 1 -->
+          @foreach($latestProducts as $product)
+          <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="card h-100 shadow-sm border-0">
+                  <img src="{{asset("assets/$product->image")}}" class="card-img-top img-fluid" alt="Product Image">
+                  <div class="card-body text-center">
+                      <h5 class="card-title">{{$product->title}}</h5>
+                      <p class="card-text">{!! Str::limit(str_replace('"', '', $product->description), 300) !!}</p>
+                      <p class="card-text">{{$product->price}} EGP</p>
+                      <div class="d-flex justify-content-center gap-2">
+                          <a href="{{route('make-order',$product->id)}}" class="btn btn-outline-primary btn-sm">BUY</a>
+                          <a href="" class="btn btn-outline-secondary btn-sm">VIEW</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
         @endforeach
       </div>
-      <div class="text-center mt-5">
-        <a href="{{route('pages-home')}}" class="btn btn-primary">View All</a>
-      </div>
-    </div>
-  </section>
-  <!-- Useful features: End -->
-
-  <!-- Real customers reviews: Start -->
-  <section id="landingReviews" class="section-py bg-body landing-reviews pb-0">
-    <!-- What people say slider: Start -->
-    <div class="container">
-      <div class="row align-items-center gx-0 gy-4 g-lg-5 mb-5 pb-md-5">
-        <div class="col-md-6 col-lg-5 col-xl-3">
-          <div class="mb-4">
-            <span class="badge bg-label-primary">Real Customers Reviews</span>
-          </div>
-          <h4 class="mb-1">
-            <span class="position-relative fw-extrabold z-1">What people say
-              <img src="{{asset('assets/img/front-pages/icons/section-title-icon.png')}}" alt="laptop charging" class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
-            </span>
-          </h4>
-          <p class="mb-5 mb-md-12">
-            See what our customers have to<br class="d-none d-xl-block" />
-            say about their experience.
-          </p>
-          <div class="landing-reviews-btns">
-            <button id="reviews-previous-btn" class="btn btn-label-primary reviews-btn me-4 scaleX-n1-rtl" type="button">
-              <i class="ti ti-chevron-left ti-md"></i>
-            </button>
-            <button id="reviews-next-btn" class="btn btn-label-primary reviews-btn scaleX-n1-rtl" type="button">
-              <i class="ti ti-chevron-right ti-md"></i>
-            </button>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-7 col-xl-9">
-          <div class="swiper-reviews-carousel overflow-hidden">
-            <div class="swiper" id="swiper-reviews">
-
-              <div class="swiper-wrapper">
-                @foreach ($reviews as $review)
-                <div class="swiper-slide">
-                  <div class="card h-100">
-                    <div class="card-body text-body d-flex flex-column justify-content-between h-100">
-                      <div class="mb-4">
-                        <h4>{{$review->product->title}}</h4>
-                      </div>
-                      <p>
-                        {{$review->description}}
-                      </p>
-                      <div class="text-warning mb-4">
-                        @for ($i = 0 ; $i < $review->stars; $i++)
-                          <i class="ti ti-star-filled"></i>
-                        @endfor
-                      </div>
-                      <div class="d-flex align-items-center">
-                        <div class="avatar me-3 avatar-sm">
-                          <img src="{{asset('assets/img/avatars/1.png')}}" alt="Avatar" class="rounded-circle" />
-                        </div>
-                        <div>
-                          <h6 class="mb-0">{{$review->user->name}}</h6>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                @endforeach
-              </div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- What people say slider: End -->
-    <hr class="m-0 mt-6 mt-md-12" />
-    <!-- Logo slider: Start -->
-    <div class="container">
-      <div class="swiper-logo-carousel py-8">
-        <div class="swiper" id="swiper-clients-logos">
-          <div class="swiper-wrapper" style="height: auto">
-            @foreach ($reviews as $review)
-            <div class="swiper-slide">
-              <h5>{{$review->product->title}}</h5>
-            </div>
-            @endforeach
-          </div>
-        </div>
-      {{-- </div> --}}
-    </div>
-    <!-- Logo slider: End -->
-  </section>
-  <!-- Real customers reviews: End -->
-
-  <!-- Our great team: Start -->
-  <section id="landingTeam" class="section-py landing-team">
-    <div class="container">
-      <div class="text-center mb-4">
-        <span class="badge bg-label-primary">Our Great Team</span>
-      </div>
-      <h4 class="text-center mb-1">
-        <span class="position-relative fw-extrabold z-1">Supported
-          <img src="{{asset('assets/img/front-pages/icons/section-title-icon.png')}}" alt="laptop charging" class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
-        </span>
-        by Real People
-      </h4>
-      <p class="text-center mb-md-11 pb-0 pb-xl-12">Who is behind these great-looking interfaces?</p>
-      <div class="row gy-12 mt-2">
-        <div class="col-lg-3 col-sm-6">
-          <div class="card mt-3 mt-lg-0 shadow-none">
-            <div class="bg-label-primary border border-bottom-0 border-label-primary position-relative team-image-box">
-              <img src="{{asset('assets/img/front-pages/landing-page/team-member-1.png')}}" class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl" alt="human image" />
-            </div>
-            <div class="card-body border border-top-0 border-label-primary text-center">
-              <h5 class="card-title mb-0">Sophie Gilbert</h5>
-              <p class="text-muted mb-0">Project Manager</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <div class="card mt-3 mt-lg-0 shadow-none">
-            <div class="bg-label-info border border-bottom-0 border-label-info position-relative team-image-box">
-              <img src="{{asset('assets/img/front-pages/landing-page/team-member-2.png')}}" class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl" alt="human image" />
-            </div>
-            <div class="card-body border border-top-0 border-label-info text-center">
-              <h5 class="card-title mb-0">Paul Miles</h5>
-              <p class="text-muted mb-0">UI Designer</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <div class="card mt-3 mt-lg-0 shadow-none">
-            <div class="bg-label-danger border border-bottom-0 border-label-danger position-relative team-image-box">
-              <img src="{{asset('assets/img/front-pages/landing-page/team-member-3.png')}}" class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl" alt="human image" />
-            </div>
-            <div class="card-body border border-top-0 border-label-danger text-center">
-              <h5 class="card-title mb-0">Nannie Ford</h5>
-              <p class="text-muted mb-0">Development Lead</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 col-sm-6">
-          <div class="card mt-3 mt-lg-0 shadow-none">
-            <div class="bg-label-success border border-bottom-0 border-label-success position-relative team-image-box">
-              <img src="{{asset('assets/img/front-pages/landing-page/team-member-4.png')}}" class="position-absolute card-img-position bottom-0 start-50 scaleX-n1-rtl" alt="human image" />
-            </div>
-            <div class="card-body border border-top-0 border-label-success text-center">
-              <h5 class="card-title mb-0">Chris Watkins</h5>
-              <p class="text-muted mb-0">Marketing Manager</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Our great team: End -->
-
-  <!-- Fun facts: Start -->
-  <section id="landingFunFacts" class="section-py landing-fun-facts">
-    <div class="container">
-      <div class="row gy-6">
-        <div class="col-sm-6 col-lg-3">
-          <div class="card border border-primary shadow-none">
-            <div class="card-body text-center">
-              <img src="{{asset('assets/img/front-pages/icons/laptop.png')}}" alt="laptop" class="mb-4" />
-              <h3 class="mb-0">7.1k+</h3>
-              <p class="fw-medium mb-0">
-                Support Tickets<br />
-                Resolved
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="card border border-success shadow-none">
-            <div class="card-body text-center">
-              <img src="{{asset('assets/img/front-pages/icons/user-success.png')}}" alt="laptop" class="mb-4" />
-              <h3 class="mb-0">50k+</h3>
-              <p class="fw-medium mb-0">
-                Join creatives<br />
-                community
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="card border border-info shadow-none">
-            <div class="card-body text-center">
-              <img src="{{asset('assets/img/front-pages/icons/diamond-info.png')}}" alt="laptop" class="mb-4" />
-              <h3 class="mb-0">4.8/5</h3>
-              <p class="fw-medium mb-0">
-                Highly Rated<br />
-                Products
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-3">
-          <div class="card border border-warning shadow-none">
-            <div class="card-body text-center">
-              <img src="{{asset('assets/img/front-pages/icons/check-warning.png')}}" alt="laptop" class="mb-4" />
-              <h3 class="mb-0">100%</h3>
-              <p class="fw-medium mb-0">
-                Money Back<br />
-                Guarantee
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Fun facts: End -->
-
-  <!-- FAQ: Start -->
-  <section id="landingFAQ" class="section-py bg-body landing-faq">
-    <div class="container">
-      <div class="text-center mb-4">
-        <span class="badge bg-label-primary">FAQ</span>
-      </div>
-      <h4 class="text-center mb-1">Frequently asked
-        <span class="position-relative fw-extrabold z-1">questions
-          <img src="{{asset('assets/img/front-pages/icons/section-title-icon.png')}}" alt="laptop charging" class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
-        </span>
-      </h4>
-      <p class="text-center mb-12 pb-md-4">Browse through these FAQs to find answers to commonly asked questions.</p>
-      <div class="row gy-12 align-items-center">
-        <div class="col-lg-5">
-          <div class="text-center">
-            <img src="{{asset('assets/img/front-pages/landing-page/faq-boy-with-logos.png')}}" alt="faq boy with logos" class="faq-image" />
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="accordion" id="accordionExample">
-            <div class="card accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="true" aria-controls="accordionOne">
-                  Do you charge for each upgrade?
-                </button>
-              </h2>
-
-              <div id="accordionOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Lemon drops chocolate cake gummies carrot cake chupa chups muffin topping. Sesame snaps icing
-                  marzipan gummi bears macaroon dragée danish caramels powder. Bear claw dragée pastry topping
-                  soufflé. Wafer gummi bears marshmallow pastry pie.
-                </div>
-              </div>
-            </div>
-            <div class="card accordion-item">
-              <h2 class="accordion-header" id="headingTwo">
-                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionTwo" aria-expanded="false" aria-controls="accordionTwo">
-                  Do I need to purchase a license for each website?
-                </button>
-              </h2>
-              <div id="accordionTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Dessert ice cream donut oat cake jelly-o pie sugar plum cheesecake. Bear claw dragée oat cake
-                  dragée ice cream halvah tootsie roll. Danish cake oat cake pie macaroon tart donut gummies. Jelly
-                  beans candy canes carrot cake. Fruitcake chocolate chupa chups.
-                </div>
-              </div>
-            </div>
-            <div class="card accordion-item active">
-              <h2 class="accordion-header" id="headingThree">
-                <button type="button" class="accordion-button" data-bs-toggle="collapse" data-bs-target="#accordionThree" aria-expanded="false" aria-controls="accordionThree">
-                  What is regular license?
-                </button>
-              </h2>
-              <div id="accordionThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Regular license can be used for end products that do not charge users for access or service(access
-                  is free and there will be no monthly subscription fee). Single regular license can be used for
-                  single end product and end product can be used by you or your client. If you want to sell end
-                  product to multiple clients then you will need to purchase separate license for each client. The
-                  same rule applies if you want to use the same end product on multiple domains(unique setup). For
-                  more info on regular license you can check official description.
-                </div>
-              </div>
-            </div>
-            <div class="card accordion-item">
-              <h2 class="accordion-header" id="headingFour">
-                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionFour" aria-expanded="false" aria-controls="accordionFour">
-                  What is extended license?
-                </button>
-              </h2>
-              <div id="accordionFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis et aliquid quaerat possimus maxime!
-                  Mollitia reprehenderit neque repellat deleniti delectus architecto dolorum maxime, blanditiis
-                  earum ea, incidunt quam possimus cumque.
-                </div>
-              </div>
-            </div>
-            <div class="card accordion-item">
-              <h2 class="accordion-header" id="headingFive">
-                <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionFive" aria-expanded="false" aria-controls="accordionFive">
-                  Which license is applicable for SASS application?
-                </button>
-              </h2>
-              <div id="accordionFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                <div class="accordion-body">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi molestias exercitationem ab cum
-                  nemo facere voluptates veritatis quia, eveniet veniam at et repudiandae mollitia ipsam quasi
-                  labore enim architecto non!
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- FAQ: End -->
-
-  <!-- CTA: Start -->
-  <section id="landingCTA" class="section-py landing-cta position-relative p-lg-0 pb-0">
-    <img src="{{asset('assets/img/front-pages/backgrounds/cta-bg-'.$configData['style'].'.png')}}" class="position-absolute bottom-0 end-0 scaleX-n1-rtl h-100 w-100 z-n1" alt="cta image" data-app-light-img="front-pages/backgrounds/cta-bg-light.png" data-app-dark-img="front-pages/backgrounds/cta-bg-dark.png" />
-    <div class="container">
-      <div class="row align-items-center gy-12">
-        <div class="col-lg-6 text-start text-sm-center text-lg-start">
-          <h3 class="cta-title text-primary fw-bold mb-0">Ready to Get Started?</h3>
-          <h5 class="text-body mb-8">Start communicate with others</h5>
-          <a href="{{route('pages-home')}}" class="btn btn-lg btn-primary">Get Started</a>
-        </div>
-        <div class="col-lg-6 pt-lg-12 text-center text-lg-end">
-          <img src="{{asset('assets/img/front-pages/landing-page/community.png')}}" alt="cta dashboard" class="img-fluid mt-lg-4" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- CTA: End -->
-
-  <!-- Contact Us: Start -->
-  <section id="landingContact" class="section-py bg-body landing-contact">
-    <div class="container">
-      <div class="text-center mb-4">
-        <span class="badge bg-label-primary">Contact US</span>
-      </div>
-      <h4 class="text-center mb-1">
-        <span class="position-relative fw-extrabold z-1">Let's work
-          <img src="{{asset('assets/img/front-pages/icons/section-title-icon.png')}}" alt="laptop charging" class="section-title-img position-absolute object-fit-contain bottom-0 z-n1">
-        </span>
-        together
-      </h4>
-      <p class="text-center mb-12 pb-md-4">Any question or remark? just write us a message</p>
-      <div class="row g-6">
-        <div class="col-lg-5">
-          <div class="contact-img-box position-relative border p-2 h-100">
-            <img src="{{asset('assets/img/front-pages/icons/contact-border.png')}}" alt="contact border" class="contact-border-img position-absolute d-none d-lg-block scaleX-n1-rtl" />
-            <img src="{{asset('assets/img/front-pages/landing-page/contact-customer-service.png')}}" alt="contact customer service" class="contact-img  w-100 scaleX-n1-rtl" />
-            <div class="p-4 pb-2">
-              <div class="row g-4">
-                <div class="col-md-6 col-lg-12 col-xl-6">
-                  <div class="d-flex align-items-center">
-                    <div class="badge bg-label-primary rounded p-1_5 me-3"><i class="ti ti-mail ti-lg"></i></div>
-                    <div>
-                      <p class="mb-0">Email</p>
-                      <h6 class="mb-0"><a href="mailto:example@gmail.com" class="text-heading">example@gmail.com</a></h6>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-12 col-xl-6">
-                  <div class="d-flex align-items-center">
-                    <div class="badge bg-label-success rounded p-1_5 me-3"><i class="ti ti-phone-call ti-lg"></i></div>
-                    <div>
-                      <p class="mb-0">Phone</p>
-                      <h6 class="mb-0"><a href="tel:+1234-568-963" class="text-heading">+1234 568 963</a></h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-7">
-          <div class="card h-100">
-            <div class="card-body">
-              <h4 class="mb-2">Send a message</h4>
-              <p class="mb-6">
-                If you would like to discuss anything related to payment, account, licensing,<br class="d-none d-lg-block" />
-                partnerships, or have pre-sales questions, you’re at the right place.
-              </p>
-              <form method="POST" action="{{route('message.send')}}">
-                @csrf
-                @if ($errors->any())
-                <script>
-                  const element = document.getElementById('landingContact');
-                  window.scrollTo({
-                    top: element.offsetTop,
-                    behavior: 'smooth'
-                  });
-                </script>
-                <div class="alert alert-danger">
-                  <ul>
-                    @foreach ($errors->all() as $error)
-                    <li>{{$error}}</li>
-                    @endforeach
-                  </ul>
-                </div>
-                @endif
-
-                @if (session('success'))
-                <script>
-                  const element = document.getElementById('landingContact');
-                  window.scrollTo({
-                    top: element.offsetTop,
-                    behavior: 'smooth'
-                  });
-                </script>
-                <div class="alert alert-success">
-                  {{session('success')}}
-                </div>
-                @endif
-
-                <div class="row g-4">
-                  <div class="col-md-6">
-                    <label class="form-label" for="contact-form-fullname">Full Name</label>
-                    <input type="text" name="full_name" class="form-control" value="{{old('full_name')}}" id="contact-form-fullname" placeholder="john" />
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="contact-form-email">Email</label>
-                    <input type="email" name="email" id="contact-form-email" value="{{old('email')}}" class="form-control" placeholder="johndoe@gmail.com" />
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label" for="contact-form-message">Message</label>
-                    <textarea id="contact-form-message" name="message" class="form-control" rows="7" placeholder="Write a message">{{old('message')}}</textarea>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Send inquiry</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Contact Us: End -->
+  </div>
 </div>
-@endsection
+    <!-- Team Start -->
+    <div class="container-xxl py-5" id="Contact Us">
+      <div class="container">
+          <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+              <h6 class="section-title bg-white text-center text-primary px-3">BU-VO Guides</h6>
+              <h1 class="mb-5">Meet Our Guides</h1>
+          </div>
+          <div class="row g-4">
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="team-item">
+                      <div class="overflow-hidden">
+                          <img class="img-fluid" src="{{asset("assect/images/img/Team/team-1.jpg")}}" alt="">
+                      </div>
+                      <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <div class="text-center p-4">
+                          <h5 class="mb-0">Ahmed Ezz</h5>
+                          <small>(GM)</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                  <div class="team-item">
+                      <div class="overflow-hidden">
+                          <img class="img-fluid" src="{{asset("assect/images/img/Team/team-2.jpg")}}" alt="">
+                      </div>
+                      <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <div class="text-center p-4">
+                          <h5 class="mb-0">Mai Elkhady</h5>
+                          <small>(CEO)</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                  <div class="team-item">
+                      <div class="overflow-hidden">
+                          <img class="img-fluid" src="{{asset("assect/images/img/Team/team-3.jpg")}}" alt="">
+                      </div>
+                      <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <div class="text-center p-4">
+                          <h5 class="mb-0">Mohamed Hany</h5>
+                          <small>(CMO)</small>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                  <div class="team-item">
+                      <div class="overflow-hidden">
+                          <img class="img-fluid" src="{{asset("assect/images/img/Team/team-4.jpg")}}" alt="">
+                      </div>
+                      <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
+                          <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
+                      </div>
+                      <div class="text-center p-4">
+                          <h5 class="mb-0">Rana Ali</h5>
+                          <small>(CTO)</small>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Team End -->
+  <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+    <h1 class="mb-5">Top Reviews?!</h1>
+</div>
+<!-- Testimonial Start -->
+<div class="container-xxl py-5" id="Top-Reviews">
+  <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+          <h6 class="section-title bg-white text-center text-primary px-3">Customer Feedback</h6>
+          <h1 class="mb-5">Top Reviews</h1>
+      </div>
+
+      <div class="testimonial-carousel-container position-relative">
+          <div class="testimonial-carousel">
+              <!-- Slide 1 -->
+              @foreach ($reviews as $review)
+                <div class="testimonial-slide">
+                    <img src="{{asset('assets/img/avatars/1.png')}}" alt="Testimonial 1" class="testimonial-img">
+                    <div class="slide-content">
+                        <div class="testimonial-quote">{{$review->description}}</div>
+                        <h5 class="testimonial-name">{{$review->user->name}}</h5>
+                        <small class="testimonial-role">{{$review->product->title}}</small>
+                        <div class="testimonial-rating">
+                          @for ($i = 0 ; $i < $review->stars; $i++)
+                            <i class="fas fa-star"></i>
+                          @endfor
+                        </div>
+                    </div>
+                </div>
+              @endforeach
+
+              <!-- Add remaining slides following the same pattern -->
+          </div>
+
+          <!-- Navigation Buttons -->
+          <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+
+          <!-- Pagination Dots -->
+          <div class="carousel-dots"></div>
+      </div>
+  </div>
+</div>
+<!-- Testimonial End -->
+
+     <!-- Footer Start -->
+     <div class="container-fluid footer text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Address</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street,NASR CITE, EG</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social rounded-circle" href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Services</h5>
+                    <a class="btn btn-link" href="">Cardiology</a>
+                    <a class="btn btn-link" href="">Pulmonary</a>
+                    <a class="btn btn-link" href="">Neurology</a>
+                    <a class="btn btn-link" href="">Orthopedics</a>
+                    <a class="btn btn-link" href="">Laboratory</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-4">Newsletter</h5>
+                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <div class="position-relative mx-auto" style="max-width: 400px;">
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">Your Site Name</a>BU-VO A Dynamic Online
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+
+
+
+
+
+
+<script src="{{asset("assect/javascript/bootstrap.bundle.min.js")}}"></script>
+<script src="{{asset("assect/owlcarousel/owl.carousel.min.js")}}"></script>
+<script src="{{asset("assect/javascript/main.js")}}"></script>
+
+
+</body>
+</html>

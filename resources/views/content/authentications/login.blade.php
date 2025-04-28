@@ -1,108 +1,107 @@
-@php
-$customizerHidden = 'customizer-hide';
-$configData = Helper::appClasses();
-@endphp
+<!DOCTYPE html>
+<html lang="en">
 
-@extends('layouts/layoutMaster')
+<head>
 
-@section('title', 'Login')
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-@section('vendor-style')
-@vite([
-  'resources/assets/vendor/libs/@form-validation/form-validation.scss'
-])
-@endsection
+    <title>SB Admin 2 - Login</title>
 
-@section('page-style')
-@vite([
-  'resources/assets/vendor/scss/pages/page-auth.scss'
-])
-@endsection
+    <!-- Custom fonts for this template-->
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-@section('vendor-script')
-@vite([
-  'resources/assets/vendor/libs/@form-validation/popular.js',
-  'resources/assets/vendor/libs/@form-validation/bootstrap5.js',
-  'resources/assets/vendor/libs/@form-validation/auto-focus.js'
-])
-@endsection
+    <!-- Custom styles for this template-->
+    <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
-@section('page-script')
-@vite([
-  'resources/assets/js/pages-auth.js'
-])
-@endsection
+</head>
 
-@section('content')
-<div class="authentication-wrapper authentication-cover">
-  <!-- Logo -->
-  <a href="{{url('/')}}" class="app-brand auth-cover-brand">
-    <span class="app-brand-logo demo">@include('_partials.macros',['height'=>20,'withbg' => "fill: #fff;"])</span>
-    <span class="app-brand-text demo text-heading fw-bold">{{ config('variables.templateName') }}</span>
-  </a>
-  <!-- /Logo -->
-  <div class="authentication-inner row m-0">
-    <!-- /Left Text -->
-    <div class="d-none d-lg-flex col-lg-8 p-0">
-      <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center">
-        <img src="{{ asset('assets/img/illustrations/auth-login-illustration-'.$configData['style'].'.png') }}" alt="auth-login-cover" class="my-5 auth-illustration" data-app-light-img="illustrations/auth-login-illustration-light.png" data-app-dark-img="illustrations/auth-login-illustration-dark.png">
+<body class="bg-gradient-primary">
 
-        <img src="{{ asset('assets/img/illustrations/bg-shape-image-'.$configData['style'].'.png') }}" alt="auth-login-cover" class="platform-bg" data-app-light-img="illustrations/bg-shape-image-light.png" data-app-dark-img="illustrations/bg-shape-image-dark.png">
-      </div>
-    </div>
-    <!-- /Left Text -->
+    <div class="container">
 
-    <!-- Login -->
-    <div class="d-flex col-12 col-lg-4 align-items-center authentication-bg p-sm-12 p-6">
-      <div class="w-px-400 mx-auto mt-12 pt-5">
-        <h4 class="mb-1">Welcome to {{ config('variables.templateName') }}! 👋</h4>
-        <p class="mb-6">Please sign-in to your account and start the adventure</p>
+        <!-- Outer Row -->
+        <div class="row justify-content-center">
 
-        <form id="formAuthentication" class="mb-6" action="{{route('login')}}" method="POST">
-          @csrf
-          <div class="mb-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" autofocus>
-            @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
-          </div>
-          <div class="mb-6 form-password-toggle">
-            <label class="form-label" for="password">Password</label>
-            <div class="input-group input-group-merge">
-              <input type="password" id="password" class="form-control" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="password" />
-              <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+            <div class="col-xl-10 col-lg-12 col-md-9">
+
+                <div class="card o-hidden border-0 shadow-lg my-5">
+                    <div class="card-body p-0">
+                        <!-- Nested Row within Card Body -->
+                        <div class="row">
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center d-lg-block bg-login-image">
+                                <img src="{{asset('img/undraw_posting_photo.svg')}}" alt="login image" class="img-fluid translate-middle">
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                                    </div>
+                                    <form class="user" action="{{route('login')}}" method="POST">
+                                        @csrf
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control form-control-user"
+                                                id="exampleInputEmail" aria-describedby="emailHelp"
+                                                placeholder="Enter Email Address...">
+                                            @error('email')
+                                            <span class="text-danger">{{$message}}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password" class="form-control form-control-user"
+                                                id="exampleInputPassword" placeholder="Password">
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="custom-control custom-checkbox small">
+                                                <input type="checkbox" name="remember" class="custom-control-input" id="customCheck">
+                                                <label class="custom-control-label" for="customCheck">Remember
+                                                    Me</label>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Login" class="btn btn-primary btn-user btn-block">
+                                        <hr>
+                                        <a href="" class="btn btn-google btn-user btn-block">
+                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                        </a>
+                                        <a href="" class="btn btn-facebook btn-user btn-block">
+                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
+                                        </a>
+                                    </form>
+                                    <hr>
+                                    <div class="text-center">
+                                        <a class="small" href="{{url('auth/forgot-password-cover')}}">Forgot Password?</a>
+                                    </div>
+                                    <div class="text-center">
+                                        <a class="small" href="{{route('register-page')}}">Create an Account!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-          </div>
-          <div class="my-8">
-            <div class="d-flex justify-content-between">
-              <div class="form-check mb-0 ms-2">
-                <input class="form-check-input" name="remember" type="checkbox" id="remember-me">
-                <label class="form-check-label" for="remember-me">
-                  Remember Me
-                </label>
-              </div>
-              <a href="{{url('auth/forgot-password-cover')}}">
-                <p class="mb-0">Forgot Password?</p>
-              </a>
-            </div>
-          </div>
-          <button class="btn btn-primary d-grid w-100">
-            Sign in
-          </button>
-        </form>
 
-        <p class="text-center">
-          <span>New on our platform?</span>
-          <a href="{{route('register-page')}}">
-            <span>Create an account</span>
-          </a>
-        </p>
-      </div>
+        </div>
+
     </div>
-    <!-- /Login -->
-  </div>
-</div>
-@endsection
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+
+</body>
+
+</html>
